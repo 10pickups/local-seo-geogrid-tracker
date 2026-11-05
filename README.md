@@ -34,3 +34,4 @@ The project files (`package.json`, `vite.config.js`, `index.html`, `src/`) must 
 - Cloudflare Root directory: `geogrid-rank-tracker`
 - Build command: `npm run build`
 - Build output directory: `dist`
+Deployment configuration updated for v1.2.
