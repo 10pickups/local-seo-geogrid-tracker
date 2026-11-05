@@ -1,38 +1,36 @@
-# GeoGrid Local Rank Tracker — v1.0
+# GeoGrid Local Rank Tracker — v1.1
 
-A React + Vite starter app for manually recording local search ranking positions on a geographic grid.
+React + Vite local SEO GeoGrid tracker.
 
-## What's included
-- Business, keyword, location and grid settings
-- OpenStreetMap map with generated 3x3, 5x5 or 7x7 grid points
-- Manual ranking entry for each point
-- Average rank, Top 3 coverage and Top 10 metrics
-- Save scan snapshots to browser-local history
-- CSV import/export and text report export
-- Responsive dashboard
+## v1.1 features
+- Campaign management: create and switch between campaigns.
+- Multiple business locations inside each campaign.
+- Per-location keyword, address, coordinates and grid settings.
+- Grid sizes: 3x3 through 21x21.
+- Scan radius with kilometres or miles.
+- Platform preferences: Google Maps, Apple Maps, Bing, Google AI Overviews, ChatGPT and Gemini.
+- Keyword type: Traditional Search, AI Platforms, or Traditional + AI Platforms.
+- Manual ranking entry, ranking map, Average Map Rank, Top 3 and Top 10 metrics.
+- CSV import/export, text report export and browser-local scan history.
+- Migrates the earlier v1 browser data when available.
 
-## Important data limitation
-This version does **not** automatically query Google Maps or retrieve live ranking positions. Ranking values are manually entered or imported from a CSV file. OpenStreetMap is used only to display the map. Do not present manual values as verified live Google Maps data.
+## Important limitations
+Platform choices are campaign configuration only. This version does not automatically query Google, Apple, Bing or AI platforms. Rankings remain manually entered or CSV imported. Automatic scanning needs a suitable data provider, backend and separate integration. Data is stored in the current browser using localStorage; it is not yet synced between devices or users.
 
 ## Run locally
-1. Install Node.js (LTS).
+1. Install Node.js LTS.
 2. Extract this ZIP.
-3. Open a terminal in the extracted `geogrid-rank-tracker` folder.
+3. Open a terminal in the extracted project folder.
 4. Run `npm install`.
 5. Run `npm run dev`.
-6. Open the local URL shown by Vite (usually `http://localhost:5173`).
+6. Open the local URL shown by Vite.
 
-## Build for hosting
-Run `npm run build`. Upload the generated `dist` folder to a static host such as Vercel or Netlify.
+## Build
+Run `npm run build`. Vite creates the `dist` folder.
 
-## CSV format
-Export a sample CSV from the app first. The expected columns are:
-`point_id,latitude,longitude,rank`
+## Cloudflare Pages
+- Root directory: `/` (the project package.json is at the project root).
+- Build command: `npm run build`
+- Build output directory: `dist`
 
-The app stores project details, points and history in the current browser's localStorage. Clearing browser data will remove that local data. This is a single-browser prototype, not a multi-user cloud application yet.
-
-## Next development phase
-- Supabase authentication and cloud database
-- Scheduled scans through a compliant local rank data provider
-- Multiple business projects and user accounts
-- PDF report generation and white-label branding
+If you keep this folder nested inside a GitHub repository, set Cloudflare Root directory to the nested project folder name instead.
